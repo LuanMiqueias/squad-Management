@@ -1,0 +1,21 @@
+.painel{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+  margin-left:10px;
+  position: relative;
+  height: 100%;
+  gap:32px;
+}
+.painel::before{
+  content: '';
+  width: 1px;
+  height: 100%;
+  background:red;
+  position: absolute;
+  top: 50%;  /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+
+  transform: translate(-50%, -50%)
+}

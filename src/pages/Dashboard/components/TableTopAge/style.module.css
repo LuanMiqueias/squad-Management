@@ -1,0 +1,37 @@
+.container{
+  width: 100%;
+}
+.title{
+  font-size: .88rem;
+  color:var(--text);
+  font-weight: 600;
+  padding: 8px 0;
+}
+.table{
+  padding: 4px;
+  font-size: .75rem;
+  font-weight: 400;
+  color:var(--black);
+  background:var(--gray);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap:4px;
+}
+
+.content{
+  display: flex;
+  gap:24px;
+  padding: 2px 8px;
+  transition: all .05s;
+  background: #fff;
+  border-radius: 6px;
+  justify-content: space-between;
+}
+.content .TableItems{
+  padding: 8px 16px;  
+}
+.TableItems:nth-child(2){
+  font-weight: 600;
+}
+
