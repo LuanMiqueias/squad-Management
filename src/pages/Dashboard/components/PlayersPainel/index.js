@@ -33,12 +33,3 @@ const PlayersPainel = ({ data }) => {
 ***REMOVED***
 
 export default PlayersPainel;
-
-{
-  /* <PlayerProfile
-percent={item.percent}
-isMost={index === 0 ? true : false}
-title={`${index === 0 ? "Most" : "Less"} picked player`}
-name={item.name}
-></PlayerProfile> */
-}
