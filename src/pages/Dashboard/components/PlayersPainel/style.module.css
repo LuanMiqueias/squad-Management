@@ -1,21 +1,50 @@
 .painel{
   width: 80%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 32px 0;
-  margin-left:10px;
   position: relative;
   height: 100%;
   gap:32px;
 }
-.painel::before{
-  content: '';
+.divider{
   width: 1px;
   height: 100%;
-  background:red;
+  background:var(--divider);
   position: absolute;
-  top: 50%;  /* position the top  edge of the element at the middle of the parent */
-  left: 50%; /* position the left edge of the element at the middle of the parent */
-
-  transform: translate(-50%, -50%)
+ top: 50%;  
+    left: 50%;
+  transform: translate(-50%, -50%);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.divider::before{
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid var(--divider);
+  position: absolute;
+}
+.profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap:16px
+}
+.profile h2, .profile h3{
+  font-weight: 600;
+  color:var(--white);
+}
+.player h3{
+  font-size: 1rem;
+  padding-right: 25px;
+  border-bottom: 1px solid var(--white);
+}
+.player{
+  display: flex;
+  gap:16px;
+  align-items: flex-start;
 }
