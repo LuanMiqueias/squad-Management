@@ -6,10 +6,16 @@
   flex:1;
 }
 .TableHeader{
-  padding: 4px 0;
+  padding: 24px 0 ;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  cursor: pointer;
+  transition: all .05s;
+  user-select: none;
+}
+.TableHeader:hover{
+  opacity: .8;
 }
 .headerName{
   border-right: 1px solid var(--divider);
@@ -45,8 +51,7 @@
   flex: 2;
   text-align: left;
   padding: 0 16px 0 0 ;  
-  align-items: center;
-
+  text-transform: capitalize;
 }
 .containerIcons{
   display: flex;

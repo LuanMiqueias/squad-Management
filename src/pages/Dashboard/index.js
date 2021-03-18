@@ -6,13 +6,21 @@ import TableContainer from "./components/TableContainer/index";
 import TableTeams from "./components/TableTeams/index";
 import styles from "./style.module.css";
 
+// const dataFakeTeams = [
+//   { name: "aaab", description: "zzzz", id: 1 },
+//   { name: "abbbb", description: "aaaaa", id: 2 },
+//   { name: "ccc Munich", description: "ggggg", id: 3 },
+//   { name: "bbb", description: "hhhh" },
+//   { name: "ffff", description: "aaaaaaaaaaaaaaaaaaa", id: 4 },
+//   { name: "zzzz", description: "cccccccccc", id: 5 },
+// ];
 const dataFakeTeams = [
-  { name: "Barcelona", description: "Barcelona Squad" },
-  { name: "Real Madrid", description: "Real Madrid Squad" },
-  { name: "Milan", description: "Milan Squad" },
-  { name: "Livepool", description: "Livepool Squad" },
-  { name: "Bayern Munich", description: "Bayern Munich Squad" },
-  { name: "lazio", description: "lazio Squad" },
+  { name: "zzMilan", description: "zzMilan Squad", id: 1 },
+  { name: "Livepool", description: "Livepool Squad", id: 2 },
+  { name: "gggBayern Munich", description: "aaaBayern Munich Squad", id: 3 },
+  { name: "lazio", description: "aaaaalazio Squad" },
+  { name: "aaaaBarcelona", description: "zzzBarcelona Squad", id: 5 },
+  { name: "Real Madrid", description: "Real Madrid Squad", id: 4 },
 ];
 const dataFakeTop = [
   { name: "Barcelona", description: "31.8" },
