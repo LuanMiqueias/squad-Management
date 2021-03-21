@@ -6,20 +6,20 @@
   --white:#fff;
   --black:#2B2B2B;
   --gray:#E9E3E8;
+  --dark-gray:#919191;
   --title:#552C8A;
   --title-secondaty:#A0A0A0;
   --text:#3A3A3A;
   --text-secondary:#D03C6C;
-
   --gradient-background:linear-gradient(145deg, #C00E4F, #8B206F);
   --gradient-background-box:linear-gradient(#BA3E7C, #642E87);
   --background: #F7F3F7;
 
   --background-tags:#C50341;
 
-  --button-gradient:linear-gradient(-0deg, #833381 2.28%, #A8397B 83.54%);
+  --button-gradient:linear-gradient(-0deg, #833381 5%, #A8397B 80%);
 
-  --placeholder:#E1E1E1;
+  --placeholder:#cccccc;
   
   --footer-background:#E9E3E9;
 
@@ -30,14 +30,19 @@
   --border-avatar:#AE83C7;
   --shadow-avatar:#652E88;
 
-  --border-avatar-secondary:#A40662
+  --border-avatar-secondary:#A40662;
+  --background-player:#CD9ABE;
 
+  --background-player-card:linear-gradient(#fff, #E6E6E6);
 }
 
 *{
   margin:0;
   padding: 0;
   box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
 }
 body {
   background-color: var(--background);
@@ -67,8 +72,9 @@ p{margin:0}
   width: 100%;
 }
 .content{
-  max-width: 1300px;
-  margin:0 auto
+  max-width: 1400px;
+  margin:0 auto;
+  padding: 0 32px;
 }
 .span-img-fake{
   display: block;
@@ -87,3 +93,79 @@ p{margin:0}
   height: 1rem;
 }
 
+.loading{
+  width: 35px;
+  height: 35px;
+  margin:32px auto;
+  border-radius: 25px;
+  border:2px solid var(--primary-color);
+  border-left-color:var(--white);
+  animation: animaLoading .6s linear infinite;
+}
+
+@keyframes animaLoading{
+  to{
+    transform: rotate(360deg);
+***REMOVED***
+}
+
+[aria-label] {
+  position: relative;
+}
+  
+[aria-label]:after {
+  content: attr(aria-label);
+  display: none;
+  position: absolute;
+  top: calc(-50% - 8px);
+  white-space: nowrap;
+  background: var(--black);
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: .15rem;
+  color:var(--white);
+  animation: animaAriaLabel .1s forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+[aria-label]::before {
+  content:'';
+  display: none;
+  position: absolute;
+  top: calc(-50% + 14px);
+  width: 10px;
+  height: 10px;
+  background: var(--black);
+  border-radius: 3px;
+  color:var(--white);
+  animation: animaAriaLabel_before .1s forwards;
+  transform:  translateY(20px) rotate(0);
+  opacity: 0;
+}
+[aria-label]:hover:after, [aria-label]:hover:before {
+    display: block;
+}
+@keyframes animaAriaLabel{
+  to{
+    transform: translateY(0px);
+    opacity: initial;
+***REMOVED***
+}
+@keyframes animaAriaLabel_before{
+  to{
+    transform: translateY(0px) rotate(45deg);
+    opacity: initial;
+***REMOVED***
+}
+ input,
+ textarea,
+ select,
+ input{
+  width: 100%;
+  border-radius: 3px;
+  border:solid 1px var(--dark-gray);
+  padding: 6px 16px;
+  font-size: .75rem;
+  outline: none;
+  color:var(--text);
+}
