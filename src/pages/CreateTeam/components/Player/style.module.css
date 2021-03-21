@@ -1,0 +1,47 @@
+.playerCard{
+  width: 100%;
+  height: 75px;
+  border-radius: 5px;
+  padding: 12px 24px;
+  background: var(--background-player-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:4px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+.playerCard::before{
+  content: '';
+  position: absolute;
+  width: calc(100% - 4px);
+  height: 71px;
+  border:2px dashed var(--gray);
+  border-radius: 5px;
+}
+.playerCard:hover{
+  transform: scale(1.3);
+  z-index: 15;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+.playerCard_line{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.playerCard_line p {
+  color:var(--dark-gray);
+  font-weight: 500;
+  color:var(--red);
+  display: flex;
+  gap: 4px
+}
+.playerCard_line p > span{
+  color:var(--text);
+  font-weight: 700;
+  color:var(--text);
+  display: flex;
+  gap: 4px
+}

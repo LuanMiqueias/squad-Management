@@ -1,0 +1,143 @@
+.createTeam_container{
+  margin-top:44px
+}
+.createTeam_content{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.subTitle{
+  font-size: 1rem;
+  font-weight: 600;
+  color:var(--dark-gray);
+  text-transform: uppercase;
+  margin: 64px 0 24px 0;
+}
+.subTitle:nth-child(1){
+  margin: 24px 0 24px 0;
+}
+.createTeam_box_columns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  gap:90px;
+}
+.createTeam_form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.createTeam_inputBlock{
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  color:var(--text);
+  font-weight: 900;
+  font-size: .80rem;
+  gap:8px;
+}
+
+.createTeam_inputBlock input::placeholder{
+  color:var(--placeholder)
+}
+.createTeam_inputBlock_radio_container{
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.createTeam_inputBlock_radio_container:nth-child(2){
+  margin-top:24px;
+}
+.createTeam_inputBlock_radio{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 16px 1fr;
+  gap:8px;
+  color:var(--text);
+  font-weight: 400;
+  user-select: none;
+  cursor: pointer;
+
+}
+.createTeam_inputBlock_radio_content{
+  display: flex;
+  gap:44px
+}
+  .createTeam_inputBlock_radio input,
+  .createTeam_inputBlock_radio label{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all .2s;
+***REMOVED***
+.createTeam_inputBlock_radio input::before{
+  content: '';
+  background: #fff;
+  width: 14px;
+  height: 14px;
+  border-radius: 12px;
+  position: absolute;
+  border:solid 1px var(--text)
+}
+.createTeam_inputBlock_radio input:checked +  label,
+.createTeam_inputBlock_radio input:checked {
+  opacity: 1;
+}
+.createTeam_inputBlock_radio input:checked:after{
+  content: '';
+  background: var(--button-gradient);
+  width: 10px;
+  height: 10px;
+  border-radius: 12px;
+  position: absolute;
+  opacity: 0;
+  transform: scale(0);
+  animation: animaInputRadio .2s forwards
+}
+@keyframes animaInputRadio{
+  to{
+    opacity: initial;
+    transform: initial;
+***REMOVED***
+}
+.createTeam_inputBlock_select{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.createTeam_inputBlock_select select{
+  max-width: 150px;
+}
+.createTeam_inputBlock input:not(:placeholder-shown):invalid + label{
+  color: var(--red);
+}
+.createTeam_inputBlock .createTeam_invalid{
+  border-color: var(--red);
+}
+.createTeam_inputBlock .createTeam_invalid + label{
+  color: var(--red);
+}
+.createTeam_button_submit{
+  width: 100%;
+  padding: 8px 0;
+  color:var(--white);
+  background: var(--button-gradient);
+  border-radius: 5px;
+  border:0;
+  font-weight: 700;
+  text-transform: initial;
+
+}
