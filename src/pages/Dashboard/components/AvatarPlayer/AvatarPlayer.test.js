@@ -13,7 +13,7 @@ it("Should return each first letter of the word", () => {
 it("Should return contrast class", () => {
   const { container } = render(
     <AvatarPlayer name="Luan miqueias" isMost={true} />
-***REMOVED***
+  );
 
   expect(container.firstChild).toHaveClass("borderMost");
   //error message:
@@ -23,7 +23,7 @@ it("Should return contrast class", () => {
 it("Should return standart class", () => {
   const { container } = render(
     <AvatarPlayer name="Luan miqueias" isMost={false} />
-***REMOVED***
+  );
 
   expect(container.firstChild).not.toHaveClass("borderMost");
   expect(container.firstChild).toHaveClass("borderLess");

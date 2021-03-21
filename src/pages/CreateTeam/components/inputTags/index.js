@@ -1,5 +1,5 @@
-***REMOVED***
-***REMOVED***
+import React from "react";
+import style from "./style.module.css";
 import closeIcon from "../../../../assets/icons/close.svg";
 
 const InputTags = () => {
@@ -12,9 +12,9 @@ const InputTags = () => {
       setTags([...tags, inputValue]);
       setInputValue("");
       e.preventDefault();
-***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+  return (
     <div className={style.inputTags}>
       <label>tags</label>
       <label htmlFor="tags" className={style.borderInput}>
@@ -24,24 +24,24 @@ const InputTags = () => {
             key={index + item}
             onClick={() => {
               setTags(tags.filter((tag) => tag !== item));
-      ***REMOVED***}
+            }}
           >
             {item}{" "}
             <img src={closeIcon} alt="" aria-label="delete" height="16px" />
           </span>
         ))}
-  ***REMOVED***
+        <input
           className={style.inputTags_input}
-  ***REMOVED***
+          type="text"
           name="tags"
           id="tags"
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => addTag(e)}
           value={inputValue}
-  ***REMOVED***
+        />
       </label>
     </div>
-***REMOVED***
-***REMOVED***
+  );
+};
 
 export default InputTags;

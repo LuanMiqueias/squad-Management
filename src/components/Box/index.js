@@ -1,4 +1,4 @@
-***REMOVED***
+import React from "react";
 import styles from "./style.module.css";
 import iconPlus from "../../assets/icons/add.svg";
 
@@ -11,11 +11,11 @@ const Box = ({
   columns,
   classNameBox,
 }) => {
-***REMOVED***
+  return (
     <div
       className={`${classNameBox} ${styles.box} ${
         isBackground && styles.backgroundBox
-***REMOVED*** `}
+      } `}
     >
       <div className={title && styles.title}>
         <h1>{title}</h1>
@@ -23,7 +23,7 @@ const Box = ({
           <button className={styles.addIcon} onClick={() => onClick()}>
             <img src={iconPlus} alt="" />
           </button>
-  ***REMOVED***
+        )}
       </div>
       <div
         className={styles.boxContent}
@@ -32,7 +32,7 @@ const Box = ({
         {children}
       </div>
     </div>
-***REMOVED***
-***REMOVED***
+  );
+};
 
 export default Box;

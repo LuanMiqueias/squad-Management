@@ -81,7 +81,7 @@
   cursor: pointer;
   opacity: 0.5;
   transition: all .2s;
-***REMOVED***
+  }
 .createTeam_inputBlock_radio input::before{
   content: '';
   background: #fff;
@@ -110,7 +110,7 @@
   to{
     opacity: initial;
     transform: initial;
-***REMOVED***
+  }
 }
 .createTeam_inputBlock_select{
   display: flex;

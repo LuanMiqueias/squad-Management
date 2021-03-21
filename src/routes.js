@@ -5,8 +5,8 @@ import CreateTeam from "./pages/CreateTeam";
 import Dashboard from "./pages/Dashboard";
 
 const Routes = () => {
-***REMOVED***
-***REMOVED***
+  return (
+    <>
       <Header />
 
       <BrowserRouter>
@@ -16,7 +16,7 @@ const Routes = () => {
         </Switch>
       </BrowserRouter>
       <Footer />
-***REMOVED***
-***REMOVED***
-***REMOVED***
+    </>
+  );
+};
 export default Routes;

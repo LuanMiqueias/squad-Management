@@ -1,4 +1,4 @@
-***REMOVED***
+import React from "react";
 
 export const CreateTeamContext = React.createContext({});
 
@@ -7,15 +7,15 @@ export const CreateTeamProvider = ({ children }) => {
 
   function changePlayer(playerData) {
     setPlayer({ ...player, [playerData.id]: playerData });
-***REMOVED***
+  }
   function changePosition(id, positionPlayer) {
     setPlayer({ ...player, [id]: { ...player[id], position: positionPlayer } });
-***REMOVED***
-***REMOVED***
+  }
+  return (
     <CreateTeamContext.Provider
       value={{ player, changePlayer, changePosition }}
     >
       {children}
     </CreateTeamContext.Provider>
-***REMOVED***
-***REMOVED***
+  );
+};

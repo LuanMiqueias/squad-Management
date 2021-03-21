@@ -1,4 +1,4 @@
-***REMOVED***
+import React from "react";
 import styles from "./style.module.css";
 
 import iconList from "../../../../assets/icons/arrowList.svg";
@@ -17,31 +17,31 @@ const TableTeams = ({ data }) => {
           setIsDescSort(!isDescSort);
           if (a[type].toLowerCase() < b[type].toLowerCase()) {
             return -1;
-    ***REMOVED***
-  ***REMOVED*** else {
+          }
+        } else {
           setIsDescSort(!isDescSort);
           if (a[type].toLowerCase() > b[type].toLowerCase()) {
             return -1;
-    ***REMOVED***
-  ***REMOVED***
+          }
+        }
         return 0;
-***REMOVED***
+      });
       setDataSorted([...arraySorted]);
-***REMOVED***,
+    },
     [isDescSort]
-***REMOVED***
+  );
   React.useMemo(() => {
     orderBy("name", data);
-***REMOVED***, [data]);
+  }, [data]);
 
-***REMOVED***
+  return (
     <div className={styles.table}>
       <div className={styles.content}>
         <span
           className={`${styles.TableHeader} ${styles.headerName}`}
           onClick={() => {
             orderBy("name", data);
-    ***REMOVED***}
+          }}
         >
           Name
           <img src={iconList} alt="" className="icon" />
@@ -50,14 +50,14 @@ const TableTeams = ({ data }) => {
           className={`${styles.TableHeader} ${styles.headerDescripition}`}
           onClick={() => {
             orderBy("description", data);
-    ***REMOVED***}
+          }}
         >
           Description
           <img src={iconList} alt="" className="icon" />
         </span>
       </div>
       {dataSorted.map(({ name, description }) => {
-      ***REMOVED***
+        return (
           <div className={styles.content} key={`${name}`}>
             <span className={styles.TableItems} aria-label="name">
               {name}
@@ -78,13 +78,13 @@ const TableTeams = ({ data }) => {
                   {" "}
                   <img src={iconEdit} alt="" className="icon" />
                 </button>
-      ***REMOVED***
+              </div>
             </span>
-  ***REMOVED***
-***REMOVED***
-***REMOVED***)}
+          </div>
+        );
+      })}
     </div>
-***REMOVED***
-***REMOVED***
+  );
+};
 
 export default TableTeams;

@@ -106,7 +106,7 @@ p{margin:0}
 @keyframes animaLoading{
   to{
     transform: rotate(360deg);
-***REMOVED***
+  }
 }
 
 [aria-label] {
@@ -149,13 +149,13 @@ p{margin:0}
   to{
     transform: translateY(0px);
     opacity: initial;
-***REMOVED***
+  }
 }
 @keyframes animaAriaLabel_before{
   to{
     transform: translateY(0px) rotate(45deg);
     opacity: initial;
-***REMOVED***
+  }
 }
  input,
  textarea,

@@ -1,4 +1,4 @@
-***REMOVED***
+import React from "react";
 import Box from "../../components/Box/index";
 import Column from "../../components/Column";
 import PlayersPainel from "./components/PlayersPainel/index";
@@ -29,7 +29,7 @@ const dataFakePlayers = [
 ];
 const Dashboard = () => {
   const navigate = useHistory();
-***REMOVED***
+  return (
     <Container
       classNameContainer={styles.dashboard}
       classNameContent={styles.dashboardContent}
@@ -40,7 +40,7 @@ const Dashboard = () => {
           isAddItems
           onClick={() => {
             navigate.push("/create-team");
-    ***REMOVED***}
+          }}
         >
           <TableTeams data={dataFakeTeams} />
         </Box>
@@ -54,7 +54,7 @@ const Dashboard = () => {
         </Box>
       </Column>
     </Container>
-***REMOVED***
-***REMOVED***
+  );
+};
 
 export default Dashboard;

@@ -1,5 +1,5 @@
-***REMOVED***
-***REMOVED***
+import React from "react";
+import style from "./style.module.css";
 import { CreateTeamContext } from "../../context";
 
 const Player = ({ name, age, nationality, id }) => {
@@ -8,8 +8,8 @@ const Player = ({ name, age, nationality, id }) => {
   function dragElement(e) {
     e.dataTransfer.setData("id-player", e.target.id);
     changePlayer({ name, age, nationality, id });
-***REMOVED***
-***REMOVED***
+  }
+  return (
     <div
       className={`${style.playerCard}`}
       draggable="true"
@@ -32,7 +32,7 @@ const Player = ({ name, age, nationality, id }) => {
         </p>
       </div>
     </div>
-***REMOVED***
-***REMOVED***
+  );
+};
 
 export default Player;

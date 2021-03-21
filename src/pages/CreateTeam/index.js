@@ -1,9 +1,9 @@
-***REMOVED***
+import React from "react";
 import Box from "../../components/Box";
 import Column from "../../components/Column";
 import Container from "../../components/Container";
 import PlayersPanel from "./components/PlayersPanel";
-***REMOVED***
+import style from "./style.module.css";
 import validator from "validator";
 import SearchPlayer from "./components/SearchPlayer";
 import { CreateTeamProvider } from "./context";
@@ -16,24 +16,24 @@ const CreateTeam = () => {
     teamWebsite: "",
     teamType: "real",
     teamFormation: "3, 2, 2, 3",
-***REMOVED***);
+  });
   const [formation, setFormation] = React.useState(
     dataForm.teamFormation.split(",").map(Number) //change array string to number before saving
-***REMOVED***
+  );
   React.useMemo(() => {
     //top of page in loads
     window.scrollTo(0, 0);
-***REMOVED***, []);
+  }, []);
   function checkOnline(url) {
     return validator.isURL(url);
-***REMOVED***
+  }
   function ToggleInvalidIput(input, type) {
     if (type === "invalid") {
       input.classList.add(style.createTeam_invalid);
-***REMOVED*** else {
+    } else {
       input.classList.remove(style.createTeam_invalid);
-***REMOVED***
-***REMOVED***
+    }
+  }
   const changeValues = React.useCallback(
     //Validates each letter entered
     (e) => {
@@ -41,26 +41,26 @@ const CreateTeam = () => {
       if (name === "teamFormation") {
         //if the name is the same, 'teamFormation' turn into number and save in state
         setFormation(value.split(",").map(Number));
-***REMOVED***
+      }
       if (name === "teamWebsite") {
         //valid website url
         if (!checkOnline(value)) {
           ToggleInvalidIput(e.currentTarget, "invalid");
-  ***REMOVED*** else {
+        } else {
           ToggleInvalidIput(e.currentTarget, "valid");
-  ***REMOVED***
-***REMOVED***
+        }
+      }
       if (value.trim() === "" && e.target.required) {
         //valid if input is filled
         ToggleInvalidIput(e.currentTarget, "invalid");
-***REMOVED*** else if (name !== "teamWebsite") {
+      } else if (name !== "teamWebsite") {
         ToggleInvalidIput(e.currentTarget, "valid");
-***REMOVED***
+      }
       setDataForm({ ...dataForm, [name]: value });
-***REMOVED***,
+    },
     [dataForm]
-***REMOVED***
-***REMOVED***
+  );
+  return (
     <div>
       <Container classNameContainer={style.createTeam_container}>
         <Column>
@@ -73,18 +73,18 @@ const CreateTeam = () => {
               <div className={style.createTeam_box_columns}>
                 <Column>
                   <div className={style.createTeam_inputBlock}>
-              ***REMOVED***
-              ***REMOVED***
+                    <input
+                      type="text"
                       id="teamName"
                       name="teamName"
                       placeholder="Insert team name"
-              ***REMOVED***
+                      required
                       autoFocus
                       value={dataForm.teamName}
                       onChange={(e) => changeValues(e)}
-        ***REMOVED***
+                    />
                     <label htmlFor="teamName">Team name</label>
-          ***REMOVED***
+                  </div>
                   <div className={style.createTeam_inputBlock}>
                     <textarea
                       rows="8"
@@ -94,55 +94,55 @@ const CreateTeam = () => {
                       onChange={(e) => changeValues(e)}
                     ></textarea>
                     <label htmlFor="description">Descripton</label>
-          ***REMOVED***
+                  </div>
                 </Column>
                 <Column>
                   <div className={style.createTeam_inputBlock}>
-              ***REMOVED***
-              ***REMOVED***
+                    <input
+                      type="text"
                       id="teamWebsite"
                       name="teamWebsite"
                       placeholder="http://myteam.com"
                       value={dataForm.teamWebsite}
-              ***REMOVED***
+                      required
                       onChange={(e) => changeValues(e)}
-        ***REMOVED***
+                    />
                     <label htmlFor="teamWebsite">Team website</label>
-          ***REMOVED***
+                  </div>
                   <div
                     className={`${style.createTeam_inputBlock} ${style.createTeam_inputBlock_radio_container}`}
                   >
                     <div className={style.createTeam_inputBlock_radio_content}>
                       <div className={style.createTeam_inputBlock_radio}>
-                  ***REMOVED***
+                        <input
                           type="radio"
                           name="teamType"
                           id="typeReal"
                           checked={dataForm.teamType === "real" ? true : false}
                           value="real"
                           onChange={(e) => changeValues(e)}
-            ***REMOVED***
+                        />
                         <label htmlFor="typeReal">Real</label>
-              ***REMOVED***
+                      </div>
                       <div className={style.createTeam_inputBlock_radio}>
-                  ***REMOVED***
+                        <input
                           type="radio"
                           name="teamType"
                           checked={
                             dataForm.teamType === "fantasy" ? true : false
-                    ***REMOVED***
+                          }
                           value=""
                           id="typeFantasy"
                           onChange={(e) => changeValues(e)}
-            ***REMOVED***
+                        />
                         <label htmlFor="typeFantasy">Fantasy</label>
-              ***REMOVED***
-            ***REMOVED***
+                      </div>
+                    </div>
                     Team type
-          ***REMOVED***
+                  </div>
                   <InputTags classNameInput={style.createTeam_inputBlock} />
                 </Column>
-      ***REMOVED***
+              </div>
               <h2 className={style.subTitle}>Configure Squad</h2>
               <div className={style.createTeam_box_columns}>
                 <CreateTeamProvider>
@@ -168,8 +168,8 @@ const CreateTeam = () => {
                         <option value={"4, 4, 2"}>4 - 5 - 1</option>
                         <option value={"4, 5, 1"}>5 - 4 -1</option>
                       </select>
-            ***REMOVED***
-        ***REMOVED***sPanel formation={formation} />
+                    </div>
+                    <PlayersPanel formation={formation} />
                     <button className={style.createTeam_button_submit}>
                       Save
                     </button>
@@ -178,16 +178,16 @@ const CreateTeam = () => {
                     <div className={style.createTeam_inputBlock}>
                       <SearchPlayer />
                       <label htmlFor="search">Search Players</label>
-            ***REMOVED***
+                    </div>
                   </Column>
                 </CreateTeamProvider>
-      ***REMOVED***
+              </div>
             </form>
           </Box>
         </Column>
       </Container>
     </div>
-***REMOVED***
-***REMOVED***
+  );
+};
 
 export default CreateTeam;

@@ -1,4 +1,4 @@
-***REMOVED***
+import React from "react";
 import styles from "./style.module.css";
 
 const AvatarPlayer = ({ name, isMost }) => {
@@ -6,20 +6,20 @@ const AvatarPlayer = ({ name, isMost }) => {
     let FirstLetterName = "";
     Array.from(
       string.trim().replace(/(?:^|\s)\S/g, (a) => {
-      ***REMOVED***FirstLetterName = FirstLetterName + a.trim());
-***REMOVED***)
-  ***REMOVED***
+        return (FirstLetterName = FirstLetterName + a.trim());
+      })
+    );
     return FirstLetterName;
-***REMOVED***
-***REMOVED***
+  }
+  return (
     <div
       className={`${styles.avatar} ${
         isMost ? styles.borderMost : styles.borderLess
-***REMOVED***`}
+      }`}
     >
       <span>{FormatNumber(name)}</span>
     </div>
-***REMOVED***
-***REMOVED***
+  );
+};
 
 export default AvatarPlayer;
