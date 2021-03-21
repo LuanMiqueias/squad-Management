@@ -15,8 +15,12 @@ const TableTopAge = ({ data, title }) => {
         {data.map(({ name, description }, index) => {
         ***REMOVED***
             <div className={styles.content} key={`${name}_${index}`}>
-              <span className={styles.TableItems}>{name}</span>
-              <span className={`${styles.TableItems}`}>{description}</span>
+              <span className={styles.TableItems} aria-label="name">
+                {name}
+              </span>
+              <span className={`${styles.TableItems}`} aria-label="description">
+                {description}
+              </span>
     ***REMOVED***
   ***REMOVED***
   ***REMOVED***)}

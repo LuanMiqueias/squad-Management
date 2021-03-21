@@ -5,15 +5,9 @@ import PlayersPainel from "./components/PlayersPainel/index";
 import TableContainer from "./components/TableContainer/index";
 import TableTeams from "./components/TableTeams/index";
 import styles from "./style.module.css";
+import { useHistory } from "react-router-dom";
+import Container from "../../components/Container";
 
-// const dataFakeTeams = [
-//   { name: "aaab", description: "zzzz", id: 1 },
-//   { name: "abbbb", description: "aaaaa", id: 2 },
-//   { name: "ccc Munich", description: "ggggg", id: 3 },
-//   { name: "bbb", description: "hhhh" },
-//   { name: "ffff", description: "aaaaaaaaaaaaaaaaaaa", id: 4 },
-//   { name: "zzzz", description: "cccccccccc", id: 5 },
-// ];
 const dataFakeTeams = [
   { name: "zzMilan", description: "zzMilan Squad", id: 1 },
   { name: "Livepool", description: "Livepool Squad", id: 2 },
@@ -34,24 +28,32 @@ const dataFakePlayers = [
   { name: "Cristiano Ronaldo", percent: 75 },
 ];
 const Dashboard = () => {
+  const navigate = useHistory();
 ***REMOVED***
-    <div className={`${styles.dashboard} container`}>
-      <div className={`${styles.dashboardContent} content`}>
-        <Column>
-          <Box title="My teams" isAddItems>
-            <TableTeams data={dataFakeTeams} />
-          </Box>
-        </Column>
-        <Column>
-          <Box title="Top 5">
-            <TableContainer data={dataFakeTop} />
-          </Box>
-          <Box isBackground>
-***REMOVED***sPainel data={dataFakePlayers} />
-          </Box>
-        </Column>
-      </div>
-    </div>
+    <Container
+      classNameContainer={styles.dashboard}
+      classNameContent={styles.dashboardContent}
+    >
+      <Column>
+        <Box
+          title="My teams"
+          isAddItems
+          onClick={() => {
+            navigate.push("/create-team");
+    ***REMOVED***}
+        >
+          <TableTeams data={dataFakeTeams} />
+        </Box>
+      </Column>
+      <Column>
+        <Box title="Top 5">
+          <TableContainer data={dataFakeTop} />
+        </Box>
+        <Box isBackground classNameBox={styles.dashboard_box_playerPainel}>
+          <PlayersPainel data={dataFakePlayers} />
+        </Box>
+      </Column>
+    </Container>
 ***REMOVED***
 ***REMOVED***
 

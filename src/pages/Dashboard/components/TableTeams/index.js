@@ -52,15 +52,20 @@ const TableTeams = ({ data }) => {
             orderBy("description", data);
     ***REMOVED***}
         >
-          Descripition
+          Description
           <img src={iconList} alt="" className="icon" />
         </span>
       </div>
-      {dataSorted.map(({ name, description, id }) => {
+      {dataSorted.map(({ name, description }) => {
       ***REMOVED***
           <div className={styles.content} key={`${name}`}>
-            <span className={styles.TableItems}>{name}</span>
-            <span className={`${styles.TableItems} ${styles.containerIcons}`}>
+            <span className={styles.TableItems} aria-label="name">
+              {name}
+            </span>
+            <span
+              className={`${styles.TableItems} ${styles.containerIcons}`}
+              aria-label="description"
+            >
               {description}
               <div className={styles.contentIcons}>
                 <button className={styles.iconBtn}>

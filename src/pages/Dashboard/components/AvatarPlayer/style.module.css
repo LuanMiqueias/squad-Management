@@ -25,6 +25,8 @@
   border:2px solid var(--border-avatar);
   border-style: dashed;
   background: transparent;
+  animation: animaBorder 10s linear infinite;
+
 }
 .borderMost::before{
   content: '';
@@ -45,4 +47,9 @@
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.25rem;
+}
+@keyframes animaBorder{
+  to{
+    transform:rotate(360deg)
+***REMOVED***
 }

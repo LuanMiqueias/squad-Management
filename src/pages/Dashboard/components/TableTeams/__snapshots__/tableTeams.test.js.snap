@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<div
+  class="table"
+>
+  <div
+    class="content"
+  >
+    <span
+      class="TableHeader headerName"
+    >
+      Name
+      <img
+        alt=""
+        class="icon"
+        src="arrowList.svg"
+***REMOVED***
+    </span>
+    <span
+      class="TableHeader headerDescripition"
+    >
+      Description
+      <img
+        alt=""
+        class="icon"
+        src="arrowList.svg"
+***REMOVED***
+    </span>
+  </div>
+  <div
+    class="content"
+  >
+    <span
+      aria-label="name"
+      class="TableItems"
+    >
+      test 1
+    </span>
+    <span
+      aria-label="description"
+      class="TableItems containerIcons"
+    >
+      description 1
+      <div
+        class="contentIcons"
+      >
+        <button
+          class="iconBtn"
+        >
+          <img
+            alt=""
+            class="icon"
+            src="delete.svg"
+    ***REMOVED***
+        </button>
+        <button
+          class="iconBtn"
+        >
+          <img
+            alt=""
+            class="icon"
+            src="share.svg"
+    ***REMOVED***
+        </button>
+        <button
+          class="iconBtn"
+        >
+           
+          <img
+            alt=""
+            class="icon"
+            src="edit.svg"
+    ***REMOVED***
+        </button>
+      </div>
+    </span>
+  </div>
+  <div
+    class="content"
+  >
+    <span
+      aria-label="name"
+      class="TableItems"
+    >
+      teste 2
+    </span>
+    <span
+      aria-label="description"
+      class="TableItems containerIcons"
+    >
+      Description 1
+      <div
+        class="contentIcons"
+      >
+        <button
+          class="iconBtn"
+        >
+          <img
+            alt=""
+            class="icon"
+            src="delete.svg"
+    ***REMOVED***
+        </button>
+        <button
+          class="iconBtn"
+        >
+          <img
+            alt=""
+            class="icon"
+            src="share.svg"
+    ***REMOVED***
+        </button>
+        <button
+          class="iconBtn"
+        >
+           
+          <img
+            alt=""
+            class="icon"
+            src="edit.svg"
+    ***REMOVED***
+        </button>
+      </div>
+    </span>
+  </div>
+</div>
+`;
