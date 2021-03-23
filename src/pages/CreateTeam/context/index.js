@@ -116,10 +116,9 @@ export const CreateTeamProvider = ({ children }) => {
     });
   }
   function validForm(data) {
-    const { name, description, website, type, formation, players } = data;
+    const { name, website, type, formation, players } = data;
     if (
       players.length === 11 &&
-      description &&
       name &&
       validator.isURL(website) &&
       formation &&
