@@ -1,0 +1,147 @@
+.container{
+  margin-top:44px
+}
+.content{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.subTitle{
+  font-size: 1rem;
+  font-weight: 600;
+  color:var(--dark-gray);
+  text-transform: uppercase;
+  margin: 64px 0 24px 0;
+}
+.subTitle:nth-child(1){
+  margin: 24px 0 24px 0;
+}
+.box_columns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  gap:90px;
+}
+.form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.inputBlock{
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  color:var(--text);
+  font-weight: 900;
+  font-size: .80rem;
+  gap:8px;
+}
+
+.inputBlock input::placeholder{
+  color:var(--placeholder)
+}
+.inputBlock_radio_container{
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.inputBlock_radio_container:nth-child(2){
+  margin-top:24px;
+}
+.inputBlock_radio{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 16px 1fr;
+  gap:8px;
+  color:var(--text);
+  font-weight: 400;
+  user-select: none;
+  cursor: pointer;
+
+}
+.inputBlock_radio_content{
+  display: flex;
+  gap:44px
+}
+  .inputBlock_radio input,
+  .inputBlock_radio label{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all .2s;
+  }
+.inputBlock_radio input::before{
+  content: '';
+  background: #fff;
+  width: 14px;
+  height: 14px;
+  border-radius: 12px;
+  position: absolute;
+  border:solid 1px var(--text)
+}
+.inputBlock_radio input:checked +  label,
+.inputBlock_radio input:checked {
+  opacity: 1;
+}
+.inputBlock_radio input:checked:after{
+  content: '';
+  background: var(--button-gradient);
+  width: 10px;
+  height: 10px;
+  border-radius: 12px;
+  position: absolute;
+  opacity: 0;
+  transform: scale(0);
+  animation: animaInputRadio .2s forwards
+}
+@keyframes animaInputRadio{
+  to{
+    opacity: initial;
+    transform: initial;
+  }
+}
+.inputBlock_select{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.inputBlock_select select{
+  max-width: 150px;
+}
+.inputBlock input:not(:placeholder-shown):invalid + label{
+  color: var(--red);
+}
+.inputBlock .invalid{
+  border-color: var(--red);
+}
+.inputBlock .invalid + label{
+  color: var(--red);
+}
+.button_submit{
+  width: 100%;
+  padding: 8px 0;
+  color:var(--white);
+  background: var(--button-gradient);
+  border-radius: 5px;
+  border:0;
+  font-weight: 700;
+  text-transform: initial;
+}
+.textErrorForm{
+  font-size: .88rem;
+  color:var(--red);
+  max-width: 90%;
+}
