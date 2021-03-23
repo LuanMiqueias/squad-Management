@@ -7,15 +7,15 @@ import Dashboard from "./pages/Dashboard";
 const Routes = () => {
   return (
     <>
-      <Header />
-
       <BrowserRouter>
+        <Header />
         <Switch>
           <Route exact path="/" component={Dashboard}></Route>
-          <Route path="/create-team" component={CreateTeam}></Route>
+          <Route path="/create-team/" component={CreateTeam}></Route>
+          <Route path="/edit/:id" component={CreateTeam}></Route>
         </Switch>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </>
   );
 };
