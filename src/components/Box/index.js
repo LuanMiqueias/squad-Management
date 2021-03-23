@@ -8,7 +8,6 @@ const Box = ({
   children,
   isBackground,
   onClick,
-  columns,
   classNameBox,
 }) => {
   return (
@@ -20,17 +19,16 @@ const Box = ({
       <div className={title && styles.title}>
         <h1>{title}</h1>
         {isAddItems && (
-          <button className={styles.addIcon} onClick={() => onClick()}>
+          <button
+            className={styles.addIcon}
+            onClick={() => onClick()}
+            aria-label="Create new team"
+          >
             <img src={iconPlus} alt="" />
           </button>
         )}
       </div>
-      <div
-        className={styles.boxContent}
-        style={{ gridTemplateColumns: columns ? columns : "1fr" }}
-      >
-        {children}
-      </div>
+      <div className={styles.boxContent}>{children}</div>
     </div>
   );
 };
