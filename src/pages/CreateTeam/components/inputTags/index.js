@@ -1,32 +1,32 @@
 import React from "react";
 import style from "./style.module.css";
 import closeIcon from "../../../../assets/icons/close.svg";
+import { CreateTeamContext } from "../../context";
 
 const InputTags = () => {
-  const [tags, setTags] = React.useState([]);
   const [inputValue, setInputValue] = React.useState("");
+  const { dataForm, deleteTag, addTag } = React.useContext(CreateTeamContext);
 
-  function addTag(e) {
-    console.log(e.target.value);
+  function handleTag(e) {
     if (e.keyCode === 191 || e.keyCode === 13) {
-      setTags([...tags, inputValue]);
-      setInputValue("");
       e.preventDefault();
+      setInputValue("");
+      addTag(inputValue);
     }
   }
   return (
     <div className={style.inputTags}>
       <label>tags</label>
       <label htmlFor="tags" className={style.borderInput}>
-        {tags?.map((item, index) => (
+        {dataForm.tags?.map((item, index) => (
           <span
             className={style.tag}
             key={index + item}
             onClick={() => {
-              setTags(tags.filter((tag) => tag !== item));
+              deleteTag(item);
             }}
           >
-            {item}{" "}
+            {item}
             <img src={closeIcon} alt="" aria-label="delete" height="16px" />
           </span>
         ))}
@@ -36,7 +36,7 @@ const InputTags = () => {
           name="tags"
           id="tags"
           onChange={(e) => setInputValue(e.target.value)}
-          onKeyDown={(e) => addTag(e)}
+          onKeyDown={(e) => handleTag(e)}
           value={inputValue}
         />
       </label>

@@ -1,13 +1,10 @@
 import React from "react";
 import style from "./style.module.css";
-import { CreateTeamContext } from "../../context";
 
 const Player = ({ name, age, nationality, id }) => {
-  const { changePlayer } = React.useContext(CreateTeamContext);
-
   function dragElement(e) {
-    e.dataTransfer.setData("id-player", e.target.id);
-    changePlayer({ name, age, nationality, id });
+    const data = JSON.stringify({ name, age, nationality, id });
+    e.dataTransfer.setData("id-player", data);
   }
   return (
     <div

@@ -23,3 +23,24 @@
   flex-direction: column;
   gap:8px
 }
+.spanError{
+  color:var(--red);
+  opacity: 0;
+  animation:animaError .4s forwards;
+}
+@keyframes animaError{
+  0%,40%{
+    transform: translateX(-5px);
+  }
+  20%,60%{
+    transform: translateX(5px);
+
+  }
+  40%,80%{
+    transform: translateX(-5px);
+  }
+  60%,100%{
+    transform: translateX(5px);
+    opacity: 1;
+  }
+}
