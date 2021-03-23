@@ -8,6 +8,7 @@ exports[`should match snapshot 1`] = `
     class="content"
   >
     <span
+      aria-label="name"
       class="TableHeader headerName"
     >
       Name
@@ -18,6 +19,7 @@ exports[`should match snapshot 1`] = `
       />
     </span>
     <span
+      aria-label="description"
       class="TableHeader headerDescripition"
     >
       Description
@@ -26,102 +28,6 @@ exports[`should match snapshot 1`] = `
         class="icon"
         src="arrowList.svg"
       />
-    </span>
-  </div>
-  <div
-    class="content"
-  >
-    <span
-      aria-label="name"
-      class="TableItems"
-    >
-      test 1
-    </span>
-    <span
-      aria-label="description"
-      class="TableItems containerIcons"
-    >
-      description 1
-      <div
-        class="contentIcons"
-      >
-        <button
-          class="iconBtn"
-        >
-          <img
-            alt=""
-            class="icon"
-            src="delete.svg"
-          />
-        </button>
-        <button
-          class="iconBtn"
-        >
-          <img
-            alt=""
-            class="icon"
-            src="share.svg"
-          />
-        </button>
-        <button
-          class="iconBtn"
-        >
-           
-          <img
-            alt=""
-            class="icon"
-            src="edit.svg"
-          />
-        </button>
-      </div>
-    </span>
-  </div>
-  <div
-    class="content"
-  >
-    <span
-      aria-label="name"
-      class="TableItems"
-    >
-      teste 2
-    </span>
-    <span
-      aria-label="description"
-      class="TableItems containerIcons"
-    >
-      Description 1
-      <div
-        class="contentIcons"
-      >
-        <button
-          class="iconBtn"
-        >
-          <img
-            alt=""
-            class="icon"
-            src="delete.svg"
-          />
-        </button>
-        <button
-          class="iconBtn"
-        >
-          <img
-            alt=""
-            class="icon"
-            src="share.svg"
-          />
-        </button>
-        <button
-          class="iconBtn"
-        >
-           
-          <img
-            alt=""
-            class="icon"
-            src="edit.svg"
-          />
-        </button>
-      </div>
     </span>
   </div>
 </div>
