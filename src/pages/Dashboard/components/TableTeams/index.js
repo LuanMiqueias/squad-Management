@@ -5,14 +5,23 @@ import iconList from "../../../../assets/icons/arrowList.svg";
 import iconDelete from "../../../../assets/icons/delete.svg";
 import iconShare from "../../../../assets/icons/share.svg";
 import iconEdit from "../../../../assets/icons/edit.svg";
+import { Link } from "react-router-dom";
 
-const TableTeams = ({ data }) => {
-  const [dataSorted, setDataSorted] = React.useState(data);
-  const [isDescSort, setIsDescSort] = React.useState(false);
+const TableTeams = () => {
+  const [dataSorted, setDataSorted] = React.useState([]);
+  const [isDescSort, setIsDescSort] = React.useState(true);
 
+  React.useEffect(() => {
+    if (localStorage.teams) {
+      const dataLocal = JSON.parse(localStorage.teams);
+      setDataSorted([...dataLocal.teams]);
+    }
+    //eslint-disable-next-line
+  }, []);
   const orderBy = React.useCallback(
-    (type, array) => {
-      const arraySorted = array.sort((a, b) => {
+    (type) => {
+      console.log("test");
+      const arraySorted = dataSorted.sort((a, b) => {
         if (!isDescSort) {
           setIsDescSort(!isDescSort);
           if (a[type].toLowerCase() < b[type].toLowerCase()) {
@@ -26,13 +35,12 @@ const TableTeams = ({ data }) => {
         }
         return 0;
       });
-      setDataSorted([...arraySorted]);
+      if (dataSorted) {
+        setDataSorted([...arraySorted]);
+      }
     },
-    [isDescSort]
+    [isDescSort, dataSorted]
   );
-  React.useMemo(() => {
-    orderBy("name", data);
-  }, [data]);
 
   return (
     <div className={styles.table}>
@@ -40,8 +48,9 @@ const TableTeams = ({ data }) => {
         <span
           className={`${styles.TableHeader} ${styles.headerName}`}
           onClick={() => {
-            orderBy("name", data);
+            orderBy("name");
           }}
+          aria-label="name"
         >
           Name
           <img src={iconList} alt="" className="icon" />
@@ -49,35 +58,37 @@ const TableTeams = ({ data }) => {
         <span
           className={`${styles.TableHeader} ${styles.headerDescripition}`}
           onClick={() => {
-            orderBy("description", data);
+            orderBy("description", dataSorted);
           }}
+          aria-label="description"
         >
           Description
           <img src={iconList} alt="" className="icon" />
         </span>
       </div>
-      {dataSorted.map(({ name, description }) => {
+      {dataSorted.map(({ name, description, id }) => {
         return (
-          <div className={styles.content} key={`${name}`}>
-            <span className={styles.TableItems} aria-label="name">
-              {name}
-            </span>
-            <span
-              className={`${styles.TableItems} ${styles.containerIcons}`}
-              aria-label="description"
-            >
-              {description}
+          <div className={styles.content} key={`${name}`} aria-label={name}>
+            <span className={styles.TableItems}>{name}</span>
+            <span className={`${styles.TableItems} ${styles.containerIcons}`}>
+              <span>{description}</span>
               <div className={styles.contentIcons}>
-                <button className={styles.iconBtn}>
+                <button className={styles.iconBtn} aria-label="Delete">
                   <img src={iconDelete} alt="" className="icon" />
+                  <div className={styles.tableTooltip}>Delete</div>
                 </button>
-                <button className={styles.iconBtn}>
+                <button className={styles.iconBtn} aria-label="Share">
                   <img src={iconShare} alt="" className="icon" />
+                  <div className={styles.tableTooltip}>Share</div>
                 </button>
-                <button className={styles.iconBtn}>
-                  {" "}
+                <Link
+                  to={`/edit/${id}`}
+                  className={styles.iconBtn}
+                  aria-label="Edit"
+                >
                   <img src={iconEdit} alt="" className="icon" />
-                </button>
+                  <div className={styles.tableTooltip}>Edit</div>
+                </Link>
               </div>
             </span>
           </div>

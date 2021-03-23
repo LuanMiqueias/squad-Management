@@ -23,8 +23,10 @@
 .content{
   display: flex;
   gap:24px;
+  align-items: center;
   padding: 12px 8px 12px 24px;
   transition: all .05s;
+
 }
 .content:nth-child(1){
   border:0;
@@ -46,18 +48,24 @@
 }
 .content span:nth-child(1){
   flex: .6;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .content span{
   flex: 2;
   text-align: left;
   padding: 0 16px 0 0 ;  
   text-transform: capitalize;
+
 }
 .containerIcons{
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
+
 .contentIcons{
   display: flex;
   gap:4px;
@@ -73,11 +81,12 @@
   outline: none;
   transition: all .1s;
   padding: 8px 6px;
-  height: 100%;
+  height: 40px;
   opacity: 0;
   transform: translateY(25%);
   transition: transform .2s;
-
+  position: relative;
+  z-index: 1000;
 }
 .content + .content:hover .iconBtn{
   opacity: 1;
@@ -89,4 +98,34 @@
 .iconBtn img{
   height: .88rem;
   transition: all .1s;
+}
+
+.tableTooltip{
+  display: none;
+  position: absolute;
+  white-space: nowrap;
+  background: var(--black);
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: .75rem;
+  color:var(--white);
+  animation: animaAriaLabel .1s forwards;
+  top:-100%;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-25%);
+  text-transform: initial;
+}
+.tableTooltip::before {
+  content:'';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--black);
+  border-radius: 3px;
+  color:var(--white);
+  transform: translateY(150%) translateX(175%) rotate(45deg);
+}
+.iconBtn:hover .tableTooltip{
+  display: flex;
 }
