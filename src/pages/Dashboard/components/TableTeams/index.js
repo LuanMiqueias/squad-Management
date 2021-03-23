@@ -20,7 +20,6 @@ const TableTeams = () => {
   }, []);
   const orderBy = React.useCallback(
     (type) => {
-      console.log("test");
       const arraySorted = dataSorted.sort((a, b) => {
         if (!isDescSort) {
           setIsDescSort(!isDescSort);
@@ -41,7 +40,14 @@ const TableTeams = () => {
     },
     [isDescSort, dataSorted]
   );
-
+  function deleteTeam(id) {
+    const dataLocal = JSON.parse(localStorage.teams);
+    const filterDataLocal = dataLocal.teams.filter((data) => data.id !== id);
+    setDataSorted(filterDataLocal);
+    localStorage.teams = JSON.stringify({
+      teams: [...filterDataLocal],
+    });
+  }
   return (
     <div className={styles.table}>
       <div className={styles.content}>
@@ -73,7 +79,11 @@ const TableTeams = () => {
             <span className={`${styles.TableItems} ${styles.containerIcons}`}>
               <span>{description}</span>
               <div className={styles.contentIcons}>
-                <button className={styles.iconBtn} aria-label="Delete">
+                <button
+                  className={styles.iconBtn}
+                  onClick={() => deleteTeam(id)}
+                  aria-label="Delete"
+                >
                   <img src={iconDelete} alt="" className="icon" />
                   <div className={styles.tableTooltip}>Delete</div>
                 </button>
