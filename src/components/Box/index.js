@@ -7,7 +7,7 @@ const Box = ({
   isAddItems,
   children,
   isBackground,
-  onClick,
+  handleClick,
   classNameBox,
 }) => {
   return (
@@ -21,7 +21,8 @@ const Box = ({
         {isAddItems && (
           <button
             className={styles.addIcon}
-            onClick={() => onClick()}
+            onClick={() => handleClick()}
+            type="button"
             aria-label="Create new team"
           >
             <img src={iconPlus} alt="" />
