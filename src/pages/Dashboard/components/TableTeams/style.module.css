@@ -25,13 +25,13 @@
   display: flex;
   gap:24px;
   align-items: center;
-  padding: 12px 8px 12px 24px;
+  padding: 12px 8px 12px 1rem;
   transition: all .05s;
 
 }
 .content:nth-child(1){
   border:0;
-  padding: 8px 8px 8px 24px;  
+  padding: 8px 8px 8px 1rem;  
   margin-bottom: 16px;
 }
 .content + .content + .content{
