@@ -20,15 +20,10 @@ Os jogadores estão sendo buscados atravez de uma API gratuita - https://www.api
 ### O que ainda falta:
 - [ ] Top 5
 - [ ] jogares mais / menos escolhidos
-- [ ] Layout moblie
 
 ### Para rodar a aplicação 
 - Instale as dependencias com `yarn` ou `npm install`
 - Depois rode a aplicação com `yarn start` ou `npm start`
-
-### Para testar a aplicação
-###### *somente alguns components estão com testes escritos em breve todos terão
-- Inicie o teste com `yarn test` ou `npm test`
 
 ### Para criar uma build da aplicação
 - Rode `yarn build` ou `npm build`
