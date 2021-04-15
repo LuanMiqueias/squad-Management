@@ -74,7 +74,7 @@ p{margin:0}
 .content{
   max-width: 1400px;
   margin:0 auto;
-  padding: 0 32px;
+  padding: 0 2rem;
 }
 .span-img-fake{
   display: block;
@@ -126,4 +126,12 @@ p{margin:0}
 }
 .input_invalid + label{
   color: var(--red);
+}
+@media(max-width:768px){
+  :root{
+    font-size:78%
+  }
+  .content{
+    padding: 0 1rem;
+  }
 }

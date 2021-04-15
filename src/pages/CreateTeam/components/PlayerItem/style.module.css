@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 8px;
   z-index: 10;
   transition: all .05s;
   cursor: pointer;
@@ -141,5 +140,11 @@
   to{
     opacity: 1;
     transform: translateX(10px);
+  }
+}
+@media(max-width:768px){
+  .player{
+    width: 45px;
+    height: 45px;
   }
 }

@@ -50,7 +50,7 @@ const Dashboard = () => {
           <TableContainer data={dataFakeTop} />
         </Box>
         <Box isBackground classNameBox={styles.dashboard_box_playerPainel}>
-          <PlayersPainel data={dataFakePlayers} />
+          {/* <PlayersPainel data={dataFakePlayers} /> */}
         </Box>
       </Column>
     </Container>

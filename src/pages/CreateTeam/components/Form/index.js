@@ -95,7 +95,7 @@ const Form = () => {
         </Column>
       </div>
       <h2 className={style.subTitle}>Configure Squad</h2>
-      <div className={style.box_columns}>
+      <div className={`${style.box_columns} ${style.box_columns_players}`}>
         <Column>
           <div className={`${style.inputBlock} ${style.inputBlock_select}`}>
             <label htmlFor="formation">Formation</label>

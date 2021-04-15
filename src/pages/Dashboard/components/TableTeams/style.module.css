@@ -1,6 +1,7 @@
 .table{
   padding: 24px 8px;
   font-size: .88rem;
+  width: 100%;
   font-weight: 600;
   color:var(--black);
   flex:1;
@@ -57,7 +58,6 @@
   text-align: left;
   padding: 0 16px 0 0 ;  
   text-transform: capitalize;
-
 }
 .containerIcons{
   display: flex;
@@ -128,4 +128,26 @@
 }
 .iconBtn:hover .tableTooltip{
   display: flex;
+}
+@media(max-width:768px){
+  .iconBtn{
+    opacity: 1;
+    transform: initial;
+  }
+  .iconBtn img{
+    transform: scale(1.2);
+  }
+  .content span:nth-child(1){
+    flex: .8;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .content span{
+    flex: 2;
+    width: 100%;
+    text-align: left;
+    padding: 0 8px 0 0 ;  
+    text-transform: capitalize;
+  }
 }

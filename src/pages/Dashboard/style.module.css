@@ -12,3 +12,16 @@
   display: flex;
   align-items: center;
 }
+@media(max-width:1200px){
+
+  .dashboardContent{
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+}
+@media(max-width:768px){
+  .dashboardContent{
+    padding: 1rem;
+  }
+}

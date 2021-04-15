@@ -145,3 +145,16 @@
   color:var(--red);
   max-width: 90%;
 }
+@media(max-width:768px){
+  .form{
+    padding: 0 1rem;
+  }
+  .content, .box_columns{
+    display: flex;
+    flex-direction: column;
+    gap:32px
+  }
+  .box_columns_players{
+    flex-direction: column-reverse;
+  }
+}
