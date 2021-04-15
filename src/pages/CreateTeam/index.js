@@ -5,7 +5,6 @@ import Container from "../../components/Container";
 import style from "./style.module.css";
 import Form from "./components/Form";
 import { CreateTeamProvider } from "./context";
-import { useParams } from "react-router";
 
 const CreateTeam = () => {
   React.useEffect(() => {
@@ -18,7 +17,7 @@ const CreateTeam = () => {
         <Column>
           <Box
             title="Create your team"
-            classNameBox={style.createTeam_box_conteiner}
+            classNameBox={style.createTeam_box_container}
           >
             <CreateTeamProvider>
               <Form />

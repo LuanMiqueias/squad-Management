@@ -16,7 +16,7 @@ export const CreateTeamProvider = ({ children }) => {
     description: "",
     website: "",
     type: "real",
-    formation: "3, 2, 2, 3",
+    formation: "3,4,3",
     players: [],
     tags: [],
   });
@@ -27,7 +27,6 @@ export const CreateTeamProvider = ({ children }) => {
       const localData = JSON.parse(localStorage.teams);
       const data = localData.teams.filter((item) => item.id === params.id)[0];
       setDataForm({ ...data });
-      console.log("params");
     }
     //eslint-disable-next-line
   }, [params]);
@@ -35,6 +34,7 @@ export const CreateTeamProvider = ({ children }) => {
     //Filter search results
     filterSearchData(dataSearch);
     //eslint-disable-next-line
+    console.log(dataForm);
   }, [dataForm]);
 
   //---InputSearch
@@ -140,27 +140,15 @@ export const CreateTeamProvider = ({ children }) => {
 
   //---Player
   function changePlayer(playerData) {
-    const filterPlayer = dataForm.players.filter(
-      (player) => player.id === playerData.id
-    ).length;
-    if (filterPlayer <= 0) {
-      //se player ainda não foi selecionado
+    const filterPlayer = dataForm.players.filter((player) => {
+      return player.position === playerData.position;
+    })[0];
+    //se player ainda não foi selecionado
+    console.log(filterPlayer);
+    if (!filterPlayer) {
       setDataForm({
         ...dataForm,
         players: [...dataForm.players, { ...playerData }],
-      });
-    } else {
-      setDataForm({
-        ...dataForm,
-        players: [
-          ...dataForm.players.map((player) => {
-            let playerNewPosition = { ...player };
-            if (player.id === playerData.id) {
-              playerNewPosition = { ...player, position: playerData.position };
-            }
-            return playerNewPosition;
-          }),
-        ],
       });
     }
   }

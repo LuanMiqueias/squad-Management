@@ -105,18 +105,20 @@ const Form = () => {
               onInput={(e) => {
                 return handleChange(e);
               }}
-              value={dataForm?.formation}
+              value={dataForm.formation}
             >
-              <option value={"3, 2, 2, 3"}>3 - 2 - 2 - 3</option>
-              <option value={"3, 2, 3, 1"}>3 - 2 - 3 - 1</option>
-              <option value={"3, 4, 3"}>3 - 4 - 3</option>
-              <option value={"3, 5, 2"}>3 - 5 - 2</option>
-              <option value={"4, 2, 3, 1"}>4 - 2 - 3 - 1</option>
-              <option value={"4, 3, 1, 1"}>4 - 3 - 1 - 1</option>
-              <option value={"4, 3, 2"}>4 - 3 - 2</option>
-              <option value={"4, 4, 2"}>4 - 4 - 2</option>
-              <option value={"4, 4, 2"}>4 - 5 - 1</option>
-              <option value={"4, 5, 1"}>5 - 4 -1</option>
+              <option value={"3,4,3"}>3-4-3</option>
+              <option value={"4,1,4,1"}>4-1-4-1</option>
+              <option value={"4,1,3,2"}>4-1-3-2</option>
+              <option value={"4,2,4"}>4-2-4</option>
+              <option value={"4,3,3"}>4-3-3</option>
+              <option value={"4,4,2"}>4-4-2</option>
+              <option value={"3,5,2"}>3-5-2</option>
+              <option value={"4,2,3,1"}> 4-2-3-1</option>
+              <option value={"3,6,1"}>3-6-1</option>
+              <option value={"4,5,1"}>4-5-1</option>
+              <option value={"5,4,1"}>5-4-1</option>
+              <option value={"5,3,2"}>5-3-2</option>
             </select>
           </div>
           <PlayersPanel formation={dataForm?.formation} />

@@ -2,22 +2,20 @@ import React from "react";
 import { CreateTeamContext } from "../../context";
 import PlayerItem from "../PlayerItem";
 import style from "./style.module.css";
+import { useParams } from "react-router";
 
 function splitArray(array, formationArray) {
+  let prev = 0; //Serve para pular os valores anterios já cortados
+  let newArray = [];
   if (array && formationArray) {
     const formation = formationArray?.split(",").map(Number);
-
     const arrayFormatted = formation.map((item, index) => {
-      let newArray = [];
-      let prev = 0; //Serve para pular os valores anterios já cortados
-
       if (index === 1) {
         prev = formation[index - 1];
         //pega valor anterior de formation
       }
       if (index > 1) {
-        prev = formation[index] + formation[index] + 1;
-        //pega valor atual mais o proximo valor
+        prev = prev + formation[index - 1];
       }
       newArray = array?.slice(prev, item + prev);
       //corta a array de acordo com os valores de item/formation
@@ -28,24 +26,28 @@ function splitArray(array, formationArray) {
 }
 
 const PlayersPanel = ({ formation }) => {
-  const { cleanPlayer, changePlayer } = React.useContext(CreateTeamContext);
+  const { cleanPlayer } = React.useContext(CreateTeamContext);
+  const params = useParams();
 
-  // React.useMemo(() => {
-  //   cleanPlayer();
-  //   // eslint-disable-next-line
-  // }, [changePlayer]);
+  console.log(params.id);
+  React.useEffect(() => {
+    if (!params.id) {
+      cleanPlayer();
+    }
+    // eslint-disable-next-line
+  }, [formation]);
 
   let playersIdArray = [];
   for (let i = 1; i < 11; i++) {
     playersIdArray.push("player_" + i);
   }
   const players = splitArray(playersIdArray, formation);
-
+  console.log(players);
   return (
     <div className={style.playerPanel_container}>
       <div className={style.playerPanel_content}>
         <div className={style.linePlayers}>
-          <PlayerItem id="player_0" />;
+          <PlayerItem id="player_0" />
         </div>
         {players?.map((items, index) => {
           return (

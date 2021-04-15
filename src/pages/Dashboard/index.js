@@ -38,7 +38,7 @@ const Dashboard = () => {
         <Box
           title="My teams"
           isAddItems
-          onClick={() => {
+          handleClick={() => {
             navigate.push("/create-team");
           }}
         >

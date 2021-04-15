@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should math snapshot 1`] = `
+<div
+  class="painel"
+>
+  <div
+    class="profile"
+  >
+    <h2>
+      Most picked player
+    </h2>
+    <div
+      class="player"
+    >
+      <div
+        class="avatar borderMost"
+      >
+        <span>
+          t2
+        </span>
+      </div>
+      <h3>
+        55
+        %
+      </h3>
+    </div>
+  </div>
+  <div
+    class="profile"
+  >
+    <h2>
+      Less picked player
+    </h2>
+    <div
+      class="player"
+    >
+      <div
+        class="avatar borderLess"
+      >
+        <span>
+          t1
+        </span>
+      </div>
+      <h3>
+        45
+        %
+      </h3>
+    </div>
+  </div>
+  <span
+    class="divider"
+  />
+</div>
+`;
