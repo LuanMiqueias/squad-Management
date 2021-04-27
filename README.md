@@ -13,7 +13,8 @@
 
 ## Tecnologias 
 Nesse projeto ultilizei
-- [Nome da tecnologia](https://github.com/)
+- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [React](https://reactjs.org/)
 
 ## Sobre
 Este projeto foi feito para um teste de uma empresa, seu objetivo e criar times de futebol onde pode ser escolhido desde a formação do time até os jogadores e suas posições.
